@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prathyush's Kitchen | Vegetarian Restaurant</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #fafafa;
+    }
+
+    /* Hero section */
+   header {
+  background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center center/cover no-repeat;
+  color: darkgreen;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7); 
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0.8rem;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #f2c94c; 
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 960px; 
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+    .menu-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .menu-item img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: .6rem; 
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .testimonial {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 280px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #222;
+      color: #eee;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <h1>🌱 Prathyush's Kitchen</h1>
+    <p>Mangalore’s Finest Vegetarian Delights</p>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Vegetarian Menu</h2>
+    <div class="menu">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1603899123170-429e2c7e5a43" alt="Neer Dosa">
+        <h3>Neer Dosa</h3>
+        <p>Soft Mangalorean rice crepes served with chutney & sambar.</p>
+        <p><b>₹90</b></p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1605478782136-b5a9044b0f7b" alt="Vegetable Ghee Roast">
+        <h3>Vegetable Ghee Roast</h3>
+        <p>Seasonal veggies tossed in Mangalorean ghee roast masala.</p>
+        <p><b>₹180</b></p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1626082951313-3b6e25a6b1f4" alt="Masala Dosa">
+        <h3>Masala Dosa</h3>
+        <p>Golden crispy dosa stuffed with spiced potato filling.</p>
+        <p><b>₹100</b></p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" alt="Veg Thali">
+        <h3>Vegetarian Thali</h3>
+        <p>A wholesome platter of rice, sambar, rasam, curry, papad & dessert.</p>
+        <p><b>₹220</b></p>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1608198093002-ad4e0054840a" alt="Ice Cream Gadbad">
+        <h3>Ice Cream Gadbad</h3>
+        <p>Famous Mangalorean layered ice cream dessert with fruits & nuts.</p>
+        <p><b>₹150</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Best vegetarian food in Mangalore! 🌟🌟🌟🌟🌟"</p>
+        <p>- Keerthan</p>
+      </div>
+      <div class="testimonial">
+        <p>"Authentic flavors and homely vibes."</p>
+        <p>- Abhinav</p>
+      </div>
+      <div class="testimonial">
+        <p>"Loved the Neer Dosa and Gadbad ice cream!"</p>
+        <p>- Rohan</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Hampankatta, Mangalore, Karnataka</p>
+    <p>📞 +91 93535 87405</p>
+    <p>📧 raoprathyush7@gmail.com</p>
+
+    <!-- Google Maps for Mangalore -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.930123601323!2d74.83561371411664!3d12.91414131947302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35a1c5a3a6dbd%3A0x2b12a6e3c71c2b58!2sHampankatta%2C%20Mangaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1692872376468!5m2!1sen!2sin"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Prathyush's Kitchen | Pure Vegetarian | Mangalore</p>
+  </footer>
+</body>
+</html>
+for this code give me a vegeterian food backgrounfd image 
