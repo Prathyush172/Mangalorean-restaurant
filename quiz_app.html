@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .options button:hover {
+      background: #0056b3;
+    }
+    #nextBtn {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none;
+    }
+    #nextBtn:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz App 📝</h1>
+    <div class="question" id="question">Question will appear here</div>
+    <div class="options" id="options"></div>
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    <h2 id="result"></h2>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hyper Tool Multi Language"],
+        answer: "Hyper Text Markup Language"
+      },
+      {
+        question: "Which language is used for styling web pages?",
+        options: ["HTML", "JQuery", "CSS", "XML"],
+        answer: "CSS"
+      },
+      {
+        question: "Which is not a JavaScript framework?",
+        options: ["Python Script", "React", "Angular", "Vue"],
+        answer: "Python Script"
+      },
+      {
+        question: "What does CSS stand for?",
+        options: ["Computer Style Sheets", "Cascading Style Sheets", "Creative Style System", "Colorful Style Sheets"],
+        answer: "Cascading Style Sheets"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("nextBtn").style.display = "none";
+      const questionData = quizData[currentQuestion];
+      document.getElementById("question").innerText = questionData.question;
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      questionData.options.forEach(option => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.onclick = () => checkAnswer(button, questionData.answer);
+        optionsDiv.appendChild(button);
+      });
+    }
+
+    function checkAnswer(button, correctAnswer) {
+      if (button.innerText === correctAnswer) {
+        button.style.background = "green";
+        score++;
+      } else {
+        button.style.background = "red";
+      }
+
+      // Disable all buttons after answering
+      const buttons = document.querySelectorAll("#options button");
+      buttons.forEach(btn => btn.disabled = true);
+
+      document.getElementById("nextBtn").style.display = "block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("question").innerText = "Quiz Finished 🎉";
+        document.getElementById("options").innerHTML = "";
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("result").innerText = `Your Score: ${score} / ${quizData.length}`;
+      }
+    }
+
+    // Load first question
+    loadQuestion();
+  </script>
+</body>
+</html>
